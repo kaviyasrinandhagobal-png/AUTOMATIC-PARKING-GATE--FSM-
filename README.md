@@ -51,7 +51,7 @@ The FPGA clock is divided down to 1 Hz so that state changes are visible on the 
 
 ### Circuit Schematic
 
-![Circuit Schematic](Images/Schematic_diagram.png)
+![Circuit Schematic](Images/Schematic%20diagram)
 
 ## ⚙️ Working Principle
 
@@ -69,7 +69,7 @@ The FSM control logic is implemented in the `parking_gate` module.
 
 ### FSM State Diagram
 
-![State Diagram](Images/state_diagram.png)
+![State Diagram](Images/state%20diagram.png)
 
 ### State Encoding and Outputs
 
@@ -118,7 +118,7 @@ The waveform below follows one exit vehicle, one entry vehicle, and an entry att
 
 ### Timing Diagram
 
-![Timing Diagram](Images/Timing_diagram.png)
+![Timing Diagram](Images/Timing%20diagram)
 
 The simulation begins with an entry request while the parking area is full, so the FSM remains in S0. Next, an exit vehicle arrives and the FSM moves to S1, opening the gate even though the parking area is full.
 
