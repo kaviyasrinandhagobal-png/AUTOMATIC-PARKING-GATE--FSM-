@@ -1,0 +1,32 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name: clk_div
+// 100 MHz -> 1 Hz (toggles every HALF cycles)
+//////////////////////////////////////////////////////////////////////////////////
+
+module clk_div #(parameter HALF = 50_000_000)
+(
+    input  clk_in,
+    input  rst,
+    output reg clk_out
+);
+
+    reg [25:0] cnt = 0;
+
+    initial clk_out = 0;
+
+    always @(posedge clk_in or posedge rst)
+    begin
+        if (rst) begin
+            cnt     <= 0;
+            clk_out <= 0; 
+        end
+        else if (cnt == HALF - 1) begin
+            cnt     <= 0;
+            clk_out <= ~clk_out;
+        end
+        else
+            cnt <= cnt + 1;
+    end
+
+endmodule
